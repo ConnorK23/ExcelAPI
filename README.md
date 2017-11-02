@@ -19,11 +19,11 @@ Creo un pom.xml para usar Maven
 Uso de jUnit
 
 # Todo realizado por y mediante:
-Maven
+
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/0/0b/Maven_logo.svg)
 
-NetBeans
-![alt text](https://www.davidtan.org/wp-content/uploads/2009/12/netbeans-ide-logo-icon.png)
 
-jUnit
+![alt text](https://2.bp.blogspot.com/-NozVwAjpXGU/VzSnQixD4AI/AAAAAAAAB2Y/zeK6eb4R678bbNCTsovIYgNdkGmioRNDQCLcB/s1600/netbeans%2Blogo.png)
+
+
 ![alt text](http://junit.org/junit4/images/junit5-banner.png)
