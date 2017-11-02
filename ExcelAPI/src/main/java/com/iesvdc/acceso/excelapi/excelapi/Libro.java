@@ -88,44 +88,44 @@ public class Libro {
             }
 
             for (int i = 0; i < libro.getNumberOfSheets(); i++){
-               Sheet hojaXlsx = libro.getSheetAt(i);
+               Sheet hoja = libro.getSheetAt(i);
 
-               int numFilas = hojaXlsx.getLastRowNum()+1;
+               int numFilas = hoja.getLastRowNum()+1;
                int numColumnas = 0;
 
-               for (int j = 0; j < hojaXlsx.getLastRowNum(); j++){
-                   Row filaXlsx = hojaXlsx.getRow(j);
+               for (int j = 0; j < hoja.getLastRowNum(); j++){
+                   Row fila = hoja.getRow(j);
 
-                   if (numColumnas < filaXlsx.getLastCellNum()){
-                       numColumnas = filaXlsx.getLastCellNum();
+                   if (numColumnas < fila.getLastCellNum()){
+                       numColumnas = fila.getLastCellNum();
                    }
                }
 
-               System.out.println("Libro.load():: dataSheet=" + hojaXlsx.getSheetName());
-               Hoja nuevaHoja = new Hoja(hojaXlsx.getSheetName(), numFilas, numColumnas);
+               System.out.println("Libro.load():: dataSheet=" + hoja.getSheetName());
+               Hoja nuevaHoja = new Hoja(hoja.getSheetName(), numFilas, numColumnas);
 
                for (int j = 0; j < numFilas; j++){
-                   Row filaXlsx = hojaXlsx.getRow(j);
-                   for (int k = 0; k < filaXlsx.getLastCellNum(); k++){
-                       Cell celdaXlsx = filaXlsx.getCell(k);
+                   Row fila = hoja.getRow(j);
+                   for (int k = 0; k < fila.getLastCellNum(); k++){
+                       Cell celda = fila.getCell(k);
                        String dato = " ";
 
-                       if (celdaXlsx != null){
-                           switch (celdaXlsx.getCellType()){
+                       if (celda != null){
+                           switch (celda.getCellType()){
                                case Cell.CELL_TYPE_STRING:
-                                   dato = celdaXlsx.getStringCellValue();
+                                   dato = celda.getStringCellValue();
                                    break;
 
                                    case Cell.CELL_TYPE_NUMERIC:
-                                   dato += celdaXlsx.getNumericCellValue();
+                                   dato += celda.getNumericCellValue();
                                    break;
 
                                    case Cell.CELL_TYPE_BOOLEAN:
-                                   dato += celdaXlsx.getBooleanCellValue();
+                                   dato += celda.getBooleanCellValue();
                                    break;
 
                                    case Cell.CELL_TYPE_FORMULA:
-                                   dato += celdaXlsx.getCellFormula();
+                                   dato += celda.getCellFormula();
                                    break;
 
                                    default:
